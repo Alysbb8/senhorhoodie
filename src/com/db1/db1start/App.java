@@ -54,7 +54,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Integer numero1, numero2, resultado;
+
         Scanner scan = new Scanner(System.in);
 
         //soma valores insderidos

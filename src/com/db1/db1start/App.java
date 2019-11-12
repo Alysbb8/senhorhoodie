@@ -34,17 +34,17 @@ public class App {
         if (val1 < val2){
             System.out.println("primeiro valor é menor que segundo valor");
             return  val1;
-        } else {
+        }
             System.out.println("segundo valor é menor que primeiro valor");
             return val2;
-        }
+
     }
 
     public static Double menor3(Double val1, Double val2, Double val3){
         if(val1 < val2 && val1 < val3){
             System.out.println("primeiro valor é o menor: " + val1);
             return val1;
-        } else if (val1 < val3 && val2 < val1){
+        } else if (val2 < val3 && val2 < val1){
             System.out.println("segundo valor é menor: " + val2);
             return val2;
         } else {

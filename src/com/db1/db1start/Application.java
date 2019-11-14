@@ -2,6 +2,7 @@ package com.db1.db1start;
 
 public class Application {
 
+    //integer
     public Integer soma(Integer val1, Integer val2) {
         return val1 + val2;
     }
@@ -40,6 +41,7 @@ public class Application {
         return val1 = (val1 + 1)/2;
     }
 
+    //string
     public String maiusc(String str1){
         return str1.toUpperCase();
     }
@@ -106,12 +108,12 @@ public class Application {
         return alun;
     }
 
-    public String frutas(String fruta){
-        String[] frutinhas;
-        frutinhas = fruta.split(", ");
-
-        return frutinhas;
+    public String[] frutas(String fruta){
+        String [] frutinha;
+        frutinha = fruta.split(", ");
+        return frutinha;
     }
+
 
     public Integer contVogais(String txt){
         return txt
@@ -120,7 +122,15 @@ public class Application {
                 .length();
     }
 
+    public String invertPalavra(String txt){
+        String str2 = "";
+        for(int x = txt.length() - 1; x >= 0; x--){
+            str2 = str2 + Character.toString(txt.charAt(x));
+        }
+        return str2;
+    }
 
+    //double
     public Double menorValor(Double val1, Double val2){
         if(val1 < val2){
             return val1;

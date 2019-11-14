@@ -4,10 +4,9 @@ package com.db1.db1start;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.zip.DeflaterOutputStream;
-
 public class AppTest {
 
+    //integer
     @Test
     public void deveRetornar5() {
 
@@ -72,6 +71,7 @@ public class AppTest {
         Assert.assertEquals(expected, response);
     }
 
+    //String
     @Test
     public void testeMaiusc() {
 
@@ -146,7 +146,6 @@ public class AppTest {
         Assert.assertEquals(expected, response);
     }
 
-
     @Test
     public void contarVogais(){
         Application application = new Application();
@@ -156,18 +155,27 @@ public class AppTest {
     }
 
     @Test
-    public void separarFrutas(){
+    public void separarFrutas() {
         Application application = new Application();
-        Integer expected = 2;
-        Integer response = application.contVogais("ALYSON");
+        String[] expected = {"banana", "maça", "melancia"};
+        String[] response = application.frutas("banana, maça, melancia");
         Assert.assertEquals(expected, response);
+    }
 
+    @Test
+    public void palavraInvertida(){
+        Application application = new Application();
+        String expected = "nosyla";
+        String response = application.invertPalavra("alyson");
+        Assert.assertEquals(expected, response);
+    }
 
+    //double
     @Test
     public void menorValorEm2Dbl(){
         Application application = new Application();
-        Double expected = 1.6;
-        Double response = application.menorValor(5.6,1.6);
+        Double expected = 1.5;
+        Double response = application.menorValor(1.5,1.9);
         Assert.assertEquals(expected, response);
     }
 

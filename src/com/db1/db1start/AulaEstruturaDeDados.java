@@ -38,5 +38,18 @@ public class AulaEstruturaDeDados {
         for(int i = 0; i < frutas.size(); i++){
             System.out.println(frutas.get(i));
         }
+
+        System.out.println("com for-each");
+        for(String s: frutas){
+            System.out.println(frutas);
+        }
+
+        System.out.println("for-each com lambida");
+        frutas.forEach(f -> System.out.println(f));
+        frutas.forEach(System.out::println);
+
+
+        
     }
+
 }

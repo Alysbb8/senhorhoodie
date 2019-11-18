@@ -1,50 +1,71 @@
 package com.db1.db1start;
 
-import javax.sound.midi.Soundbank;
-
 import java.util.*;
 
 public class AulaEstruturaDeDados {
 
+    public static  List<String> colors (){
+        //1
+        List<String> favcolors = new ArrayList<>();
+        favcolors.addAll(Arrays.asList("gray", "red", "blue", "black"));
+        return favcolors;
+
+    }
+
+    public static Integer listaQuantidade(String tx1, String tx2, String tx3) {
+        //2
+        List<String> cores = new ArrayList<>(Arrays.asList(tx1, tx2, tx3));
+        return cores.size();
+    }
+
+    public static List<String> removerCor(String tx1, String tx2, String tx3){
+        //3
+        List<String> stuff = new ArrayList<>(Arrays.asList(tx1, tx2, tx3));
+        stuff.remove(1);
+        return stuff;
+    }
+
+    public static void imprimirM1(){
+
+        System.out.println(colors());
+
+    }
+
+    public static void imprimirAlf(){
+        Collections.sort(colors());
+        System.out.println(colors());
+    }
+
+    public static List<String> removCor(List<String> cores, String colorToRemov){
+        cores.remove(colorToRemov);
+        return cores;
+    }
+
+    public static void ordemDecrescAlf(List<String> cores){
+        Collections.sort(cores, Collections.reverseOrder());
+        cores.forEach(System.out::println);
+    }
+
+
+    private static Map<String, List<Integer>> paresImpares(List<Integer> num){
+        Map<String, List<Integer>> mapa = new HashMap<>();
+        mapa.put("par", new ArrayList<>());
+        mapa.put("impar", new ArrayList<>());
+        num.forEach(n ->{
+            String chave = n % 2 == 0 ? "par" : "impar";
+                mapa.get("impar").add(n);
+            });
+        return mapa;
+    }
+
+
+
+
+
+
+
+
     public static void main (String[] args) {
-
-        List<String> frutas = new ArrayList<>();
-        frutas.add("Banana");
-        frutas.add("Maçã");
-        frutas.add("Abacaxi");
-        frutas.add("Tomate");
-        frutas.add("Figo");
-        frutas.add("Morango");
-
-        frutas.addAll(Arrays.asList("Jaca", "Caju"));
-        System.out.println("Frutas inicias");
-        System.out.println(frutas);
-        System.out.println("------------------");
-
-        frutas.add("banana");
-        System.out.println(frutas.indexOf("Banana"));
-        System.out.println(frutas.lastIndexOf("Morango"));
-        System.out.println(frutas.size());
-
-        frutas.remove("Banana");
-        frutas.add(1,"Jambo");
-        System.out.println(frutas);
-
-        frutas.removeIf( f -> f.startsWith("J"));
-        System.out.println(frutas);
-
-        for(int i = 0; i < frutas.size(); i++){
-            System.out.println(frutas.get(i));
-        }
-
-        System.out.println("com for-each");
-        for(String a: frutas){
-            System.out.println(frutas);
-        }
-
-        System.out.println("for-each com lambida");
-        frutas.forEach(f -> System.out.println(f));
-        frutas.forEach(System.out::println);
 
         //1 metodo que retorne as cores que você mais gosta
         //2 método que dado uma lista retorne a quantidade de itens
@@ -56,35 +77,51 @@ public class AulaEstruturaDeDados {
         //8 método que receba uma lista de números  e retorne um mapa com listas de numeros pares e impares
         //--------------------------------------------------------------------------------------------------------------
 
-        //1
-        List<String> cores = new ArrayList<>();
-        cores.addAll(Arrays.asList("gray", "red", "blue", "black"));
 
-        //2
-        cores.size();
 
-        //3
-        List<String> stuff = new ArrayList<>();
-        stuff.addAll(Arrays.asList("ovo", "clara", "gema"));
-        stuff.remove(1);
+//        //1
+//                List < String > cores = new ArrayList<>();
+//        cores.addAll(Arrays.asList("gray", "red", "blue", "black"));
+//        System.out.println(cores);
+//
+//        //2
+//        List<String> cor = new ArrayList<>();
+//        cor.addAll(Arrays.asList("gray", "red", "blue", "black"));
+//        System.out.println(cor.size());
+//
+//        //3
+//        List<String> stuff = new ArrayList<>();
+//        stuff.addAll(Arrays.asList("ovo", "clara", "gema"));
+//        System.out.println(stuff);
+//        stuff.remove(1);
+//        System.out.println(stuff);
+//
+//
+//        //4
+//        List<String> colors = cores;
+//        System.out.println("printing colors " + colors);
+//
+//        //5
+//        List<String> alfa = cores;
+//        Collections.sort(alfa);
+//        System.out.println(alfa);
+//
+//        //6
+//        List<String> colorsilike = new ArrayList<>();
+//        colorsilike.addAll(Arrays.asList("blue", "black", "red", "gray", "yellow"));
+//        System.out.println(colorsilike);
+//        colorsilike.removeIf(s -> s.startsWith("y"));
+//        System.out.println(colorsilike);
+//
+//
+//        //7
+//        Collections.sort(colorsilike);
+//        System.out.println(colorsilike);
+//        Collections.reverse(colorsilike);
+//        System.out.println(colorsilike);
 
-        //4
-        List<String> colors = cores;
-        System.out.println("printing colors " + colors);
+        //8
 
-        //5
-        List<String> alfa = cores;
-        Collections.sort(alfa);
-        System.out.println(alfa);
-
-        //6
-        List<String> colorsilike = new ArrayList<>();
-        colorsilike.addAll(Arrays.asList("blue", "black", "red", "gray", "yellow"));
-        colorsilike.removeIf(s -> s.startsWith("y"));
-
-        //7
-        Collections.sort(colorsilike);
-        for(int i = 0; i < ; i--)
 
 
 

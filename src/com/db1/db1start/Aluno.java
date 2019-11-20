@@ -5,6 +5,7 @@ public class Aluno extends Pessoas{
    public Double nota;
 
    public Aluno(String email, String nome){
+
        super(email, nome);
    }
 

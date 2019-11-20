@@ -41,8 +41,11 @@ public class Materia {
 
   }
 
-  public void trocaProfessor(Professor professor){
-
+  public void trocaProfessor(Professor professorNovo){
+      if(professor == null){
+        throw new CampoNaoPodeSerNulo("Professor não pode ser nulo");
+      }
+        professor = professorNovo;
   }
 
 

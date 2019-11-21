@@ -3,8 +3,8 @@ package com.db1.db1start;
 import java.util.List;
 
 public class Materia {
-  private   String nome;
 
+  private   String nome;
   private   String descricao;
   private   Double cargaHora;
   private   Integer quantiAulas;
@@ -50,8 +50,6 @@ public class Materia {
 
 
 
-
-
   public String getNome() {
     return nome;
   }
@@ -70,7 +68,7 @@ public class Materia {
 
 
 
-  @Override
+    @Override
     public String toString() {
         return "Materia{" +
                 "nome='" + nome + '\'' +

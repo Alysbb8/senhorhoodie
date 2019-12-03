@@ -1,19 +1,12 @@
 package com.db1start.demo.domain.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "cliente")
 public class Cliente {
 
 	@Id
-	@OneToOne
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
@@ -25,8 +18,9 @@ public class Cliente {
 	
 	@Column
 	private String telefone;
-	
-	@Column
+
+	@OneToOne
+	@JoinColumn(name = "conta_id")
 	private Conta conta;
 	
 	public Cliente (String nome, String cpf, String telefone) {

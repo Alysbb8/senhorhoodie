@@ -1,16 +1,8 @@
 package com.db1start.demo.domain.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.db1start.demo.domain.status.Status;
-
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity
 @Table(name = "conta")
@@ -19,15 +11,16 @@ public class Conta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
+	@ManyToOne
 	@JoinColumn(name = "agencia_id")
 	private Agencia agencia;
 	
 	@Column(name = "saldo")
 	private Double saldo;
-	
+
 	@OneToOne
-	@Column(name = "cliente_id")
+	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
 	
 	@Column

@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.db1start.demo.domain.entity.Cidade;
 import com.db1start.demo.domain.entity.Estado;
 import com.db1start.demo.repository.CidadeRepository;
+import org.springframework.stereotype.Service;
 
-@Entity
+import java.util.List;
+
+@Service
 public class CidadeService {
 
 	@Autowired
@@ -27,7 +30,9 @@ public class CidadeService {
 	public Cidade buscaPorId(Long id) {
 		return cidadeRepository.findById(id).orElseThrow(()-> new RuntimeException("Cidade não encontrada"));
 	}
-	
-	
+
+	public List<Cidade> buscarTodos(){
+		return cidadeRepository.findAll();
+	}
 	
 }

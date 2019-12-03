@@ -8,6 +8,8 @@ import com.db1start.demo.domain.entity.Cliente;
 import com.db1start.demo.domain.entity.Conta;
 import com.db1start.demo.repository.ContaRepository;
 
+import java.util.List;
+
 @Service
 public class ContaService {
 	
@@ -25,7 +27,10 @@ public class ContaService {
 		Conta conta = new Conta(saldo, agencia, cliente);
 		return contaRepository.save(conta);
 		}
-	
+
+	public List<Conta> buscarTodos(){
+		return contaRepository.findAll();
+	}
 	
 	
 	

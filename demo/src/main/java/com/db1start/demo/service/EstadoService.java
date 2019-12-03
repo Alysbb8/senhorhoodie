@@ -1,10 +1,13 @@
 package com.db1start.demo.service;
 
+import com.db1start.demo.dto.EstadoFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.db1start.demo.domain.entity.Estado;
 import com.db1start.demo.repository.EstadoRepository;
+
+import java.util.List;
 
 @Service
 public class EstadoService {
@@ -26,8 +29,29 @@ public class EstadoService {
 	public Estado buscarPorNome(String nome) {
 		return estadoRepository.findByNome(nome).orElseThrow(() -> new RuntimeException("Estado não encontrado."));
 	}
-	
+
+	public List<Estado> buscarTodos(){
+
+		return estadoRepository.findAll();
+	}
+
 	public Estado buscarPorId(Long id) {
 		return estadoRepository.findById(id).orElseThrow(() -> new RuntimeException("Estado não encontrado."));
+	}
+
+	public Estado atualizar(Long estadoId, String novoNome){
+		Estado estado = buscarPorId(estadoId);
+		estado.setNome(novoNome);
+		return estadoRepository.save(estado);
+	}
+
+	public Estado atualizar(Long estadoId, EstadoFormDTO alteracoes){
+		Estado estado = buscarPorId(estadoId);
+		estado.setNome(alteracoes.getNome());
+		return estadoRepository.save(estado);
+	}
+
+	public void deletarPorId(Long id){
+		estadoRepository.deleteById(id);
 	}
 }

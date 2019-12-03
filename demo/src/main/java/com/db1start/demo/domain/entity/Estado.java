@@ -24,8 +24,8 @@ public class Estado {
 	@Column(name = "nome")
 	private String nome;
 	
-	@OneToMany(mappedBy = "uf",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	List<Cidade> cidades;
+	@OneToMany(mappedBy = "estado",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	List<Cidade> cidades = new ArrayList<>();
 	
 	public Estado(String nome) {
 		this.nome = nome;
@@ -39,6 +39,10 @@ public class Estado {
 	
 	public String getNome() {  
 		return nome;
+	}
+
+	public void setNome(String nome){
+		this.nome = nome;
 	}
 	
 	public List<Cidade> getCidades(){

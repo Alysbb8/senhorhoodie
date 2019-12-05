@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <div id="app">
+        <section>
+            <header>
+                <h1>{{title}}</h1>
+            </header>
+            <input type="text" v-model="stateName">
+
+            <button @click="adicionarNoVetor"> Adicionar Estado</button>
+
+        <div v-for="item in states">
+           <p>{{item.id}} {{item.nome}}</p>
+        </div>
+    </section>
+
+    </div>
+<body>
+    <h1>Olá</h1>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
